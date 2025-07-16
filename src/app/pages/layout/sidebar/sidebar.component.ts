@@ -28,7 +28,7 @@ export class SidebarComponent {
 
   isMobile = false;
   menuOpen = false;
-  activeItem = 'Dashboard'; // مقدار پیش‌فرض دلخواه
+  activeItem = 'Dashboard'; 
   hoveredItem = '';
 
   setActiveItem(itemName: string) {

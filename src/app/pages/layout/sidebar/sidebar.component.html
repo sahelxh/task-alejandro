@@ -1,25 +1,24 @@
 <div *ngIf="isMobile" class="fixed top-0 right-0 w-64 bg-white">
 
-  <!-- حالت موبایل -->
-  <!-- دکمه باز کردن -->
+
   <button *ngIf="isMobile" (click)="menuOpen = true"
     class="fixed top-[25px] right-4 z-50 text-[#000000] text-[20px]">
     ☰
   </button>
 
-  <!-- پس‌زمینه نیمه شفاف -->
+
   <div *ngIf="isMobile && menuOpen" class="fixed inset-0 bg-black bg-opacity-50 z-40" (click)="closeMenu()"></div>
 
-  <!-- سایدبار کشویی موبایل -->
+
   <div *ngIf="isMobile" [class.translate-x-0]="menuOpen" [class.translate-x-full]="!menuOpen"
     class="fixed top-0 right-0 h-screen w-[250px] bg-white z-50 overflow-y-auto px-[23px] py-[12px]">
 
-    <!-- دکمه بستن -->
+
     <div class="flex justify-end">
       <button (click)="closeMenu()" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
     </div>
 
-    <!-- محتوای منو -->
+
     <div class="flex flex-col gap-[25px] mt-[20px]">
 
 
