@@ -18,13 +18,17 @@ export class HeaderComponent {
 
   ngOnInit() {
     this.checkMobile();
-    window.addEventListener('resize', () => this.checkMobile());
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', () => this.checkMobile());
+    }
   }
 
   checkMobile() {
-    this.isMobile = window.innerWidth <= 768;
+    if (typeof window !== 'undefined') {
+      this.isMobile = window.innerWidth <= 768;
+    }
   }
-
   closeMenu() {
     this.menuOpen = false;
   }

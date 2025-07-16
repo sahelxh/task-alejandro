@@ -28,7 +28,7 @@ export class SidebarComponent {
 
   isMobile = false;
   menuOpen = false;
-  activeItem = 'Dashboard'; 
+  activeItem = 'Dashboard';
   hoveredItem = '';
 
   setActiveItem(itemName: string) {
@@ -38,11 +38,16 @@ export class SidebarComponent {
 
   ngOnInit() {
     this.checkMobile();
-    window.addEventListener('resize', () => this.checkMobile());
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', () => this.checkMobile());
+    }
   }
 
   checkMobile() {
-    this.isMobile = window.innerWidth <= 768;
+    if (typeof window !== 'undefined') {
+      this.isMobile = window.innerWidth <= 768;
+    }
   }
 
   closeMenu() {
